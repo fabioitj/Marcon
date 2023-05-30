@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [blurPixels, setBlurPixels] = useState(3);
-  const [right, setRight] = useState(0);
 
   const pixelsFunction = () => {
     const pixels = Math.ceil(window.pageYOffset / 100);

@@ -1,5 +1,4 @@
 import "./styles.scss";
-import ar_condicionado from "../../assets/ar-condicionado-sem-background.png";
 
 // function Inicio({right}) {
 function Inicio() {

@@ -1,12 +1,14 @@
 import "./styles.scss";
 import {GppGood, ThumbUpAlt, Bookmark} from '@mui/icons-material';
 
-function NossoServicoCard({title, description, Icon}: {title: string, description: string, Icon: any}) {
+function NossoServicoCard({title, description, reverse, Icon}: {title: string, description: string, reverse: boolean, Icon: any}) {
     return (
-        <div className="nosso-servico__card">
+        <div className={"nosso-servico__card " + (reverse ? "nosso-servico__card-reverse" : "")}>
             {Icon}
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <div className="nosso-servico__card__text">
+                <h2>{title}</h2>
+                <p>{description}</p>
+            </div>
         </div>
     )
 }
@@ -15,17 +17,17 @@ function NossoServico() {
     const cards = [
         {
             title: 'Segurança',
-            description: 'Lorem Ipsum is Lorem Ipsum in a Vestibulum in the First Order Edition of Lorem Ipsum in the First Order Edition of Lorem Ipsum in the',
+            description: 'Provemos toda segurança necessária para nossos serviços, utilizando equipamentos e ferramentas apropriados para o trabalho.',
             Icon: <GppGood/>
         },
         {
             title: 'Qualidade',
-            description: 'Lorem Ipsum is Lorem Ipsum in a Vestibulum in the First Order Edition of Lorem Ipsum in the First Order Edition of Lorem Ipsum in the',
+            description: 'Entregamos sempre o serviço que um cliente nosso pode receber.',
             Icon: <ThumbUpAlt/>
         },
         {
             title: 'Feedback',
-            description: 'Lorem Ipsum is Lorem Ipsum in a Vestibulum in the First Order Edition of Lorem Ipsum in the First Order Edition of Lorem Ipsum in the',
+            description: 'Somos os preferidos da região, sendo os melhores avaliados na Google, não vemos a hora de atender você!',
             Icon: <Bookmark/>
         },
     ]
@@ -33,7 +35,7 @@ function NossoServico() {
     return (
         <section className="nosso-servico" id="nosso-servico">
             {
-                cards && cards.map(({title, description, Icon}, index) => <NossoServicoCard title={title} description={description} Icon={Icon} key={index}/>)
+                cards && cards.map(({title, description, Icon}, index) => <NossoServicoCard title={title} description={description} Icon={Icon} reverse={index%2==0} key={index}/>)
             }
         </section>
     )

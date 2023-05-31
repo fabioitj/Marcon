@@ -21,7 +21,7 @@ $blue: rgb(0, 153, 255);
             text-align: left;
             width: 50%;
             font-size: 2rem;
-            padding-bottom: 1rem;;
+            padding-bottom: 1rem;
         }
 
         & form {
@@ -71,6 +71,20 @@ $blue: rgb(0, 153, 255);
                 font-weight: bold;
                 font-size: 1rem;
                 border: 0;
+            }
+        }
+
+        &__icons {
+            margin-top: 1rem;
+            width: 90%;
+            display: flex;
+            justify-content: space-evenly;
+
+            & a {
+                color: white;
+                & svg {
+                    font-size: 2rem;
+                }
             }
         }
     }
@@ -140,16 +154,38 @@ $blue: rgb(0, 153, 255);
         &__box {
             width: 100%;
 
+            & h2 {
+                width: 90%;
+            }
+
             & form {
-                width: 80%;
+                width: 90%;
+            }
+
+            & a {
+                & svg {
+                    font-size: 2rem;
+                }
+                
+                color: $blue;
+
+                &:nth-child(2) {
+                    color: green !important; 
+                }
             }
         }
 
         &__avaliacao {
             width: 100%;
 
+            & h2 {
+                width: 90%;
+                font-size: 1.5rem;
+            }
+
             &__box {
-                width: 80%;
+                height: 320px;
+                width: 90%;
             }
         }
     }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles.scss";
-import {Star} from "@mui/icons-material";
+import {Star, FacebookOutlined, WhatsApp} from "@mui/icons-material";
 import avaliacao_image from "../../assets/pessoa_avaliacao.png"
 
 function Contato() {
@@ -17,7 +17,7 @@ function Contato() {
     const handleSendEmail = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
 
-        
+
 
         clearFields();
         alert("E-mail enviado com sucesso!");
@@ -33,6 +33,10 @@ function Contato() {
                     <textarea placeholder="Escreva aqui..." value={corpo} onChange={e => setCorpo(e.target.value)}></textarea>
                     <button onClick={handleSendEmail}>Enviar</button>
                 </form>
+                <div className="contato__box__icons">
+                    <a href="https://www.facebook.com/marconclimatizacao" target="_blank"><FacebookOutlined/></a>
+                    <a href="https://wa.me/5547992476252" target="_blank"><WhatsApp/></a>
+                </div>
             </div>
             <div className="contato__avaliacao">
                 <h2>Avaliações</h2>

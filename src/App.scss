@@ -1,3 +1,5 @@
+$blue: rgb(0, 153, 255);
+
 .main {
   position: relative;
 
@@ -13,6 +15,71 @@
     background-size: cover;
     background-attachment: fixed;
   }
+
+  &__back-button {
+    &-opened {
+      color: white;
+      position: fixed;
+      margin: 0 auto;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $blue;
+      animation: showUp 0.1s linear;
+
+      & svg {
+        width:50%;
+        height:50%;
+      }
+    }
+
+    &-closed {
+      color: white;
+      position: fixed;
+      margin: 0 auto;
+      bottom: -5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $blue;
+      animation: showDown 0.1s linear;
+
+      & svg {
+        width:50%;
+        height:50%;
+      }
+    }
+  }
 }
 
+@keyframes showUp {
+  from {
+    bottom: -5rem;
+  }
+
+  to {
+    bottom: 5rem;
+  }
+}
+
+@keyframes showDown {
+  from {
+    bottom: 5rem;
+  }
+
+  to {
+    bottom: -5rem;
+  }
+}
 

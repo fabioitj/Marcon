@@ -21,6 +21,8 @@ $blue: rgb(0, 153, 255);
     &__buttons {
         padding: 2rem;
         width: 100%;
+        display: flex;
+        align-items: center;
 
         & a {
             padding: 1rem;
@@ -34,11 +36,44 @@ $blue: rgb(0, 153, 255);
             cursor: pointer;
             text-decoration: none;
             color: white;
+            border-radius: 24px;
+            -webkit-box-shadow: 0px 5px 52px -12px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 5px 52px -12px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 52px -12px rgba(0,0,0,0.75);
 
             &:hover {
                 background-color: white;
                 color: $blue;
             }
+        }      
+        
+        &__zap {
+            background-color: green !important;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            &:hover {
+                color: green !important;
+                background-color: white !important;
+            }
         }
     }
-  }
+}
+
+@media screen and (max-width: 768px) {
+    .inicio {
+        padding: 0 !important;
+
+        &__apresentation {
+            font-size: 1.8rem;
+            width: 100%;
+        }
+
+        &__buttons {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+    }
+}

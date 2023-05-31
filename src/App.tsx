@@ -5,9 +5,11 @@ import Inicio from './components/inicio'
 import NossoServico from './components/nosso_servico'
 import Contato from './components/contato'
 import { useEffect, useState } from "react";
+import { ArrowUpward } from '@mui/icons-material'
 
 function App() {
   const [blurPixels, setBlurPixels] = useState(3);
+  const [showBackButton, setShowBackButton] = useState(false);
 
   const pixelsFunction = () => {
     const pixels = Math.ceil(window.pageYOffset / 100);
@@ -29,10 +31,16 @@ function App() {
   //   }
   // }
 
+  const showBackButtonFunction = () => {
+    const show = window.pageYOffset > 900;
+    setShowBackButton(show);
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       pixelsFunction();
       // rightFunction();
+      showBackButtonFunction();
       console.log(window.pageYOffset);
     });
   }, []);  
@@ -48,7 +56,7 @@ function App() {
       <Contato/>
 
       <Footer/>
-
+      <a href='#inicio' className={(showBackButton ? "main__back-button-opened" : "main__back-button-closed")}><ArrowUpward/></a>
       <div className='main__blurred-image' style={{filter: `blur(${blurPixels}px)`}}></div>
     </section>
   )

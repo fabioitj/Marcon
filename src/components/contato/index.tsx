@@ -14,7 +14,10 @@ function Contato() {
         setCorpo("");
     }
 
-    const handleSendEmail = () => {
+    const handleSendEmail = (e: React.MouseEvent<HTMLElement>) => {
+        e.preventDefault();
+
+        
 
         clearFields();
         alert("E-mail enviado com sucesso!");

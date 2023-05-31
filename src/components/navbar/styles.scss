@@ -8,8 +8,22 @@ $blue: rgb(0, 153, 255);
     align-items: center;
     padding: 2rem;
 
+    &__checkbox {
+        display: none;
+    }
+
+    & label {
+        display: none;
+    }
+
     &__logo {
         width: 200px;
+        transition: 0.2s all;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__list {
@@ -28,6 +42,46 @@ $blue: rgb(0, 153, 255);
                 cursor: pointer;
                 color: white;
                 text-decoration: none;
+
+                &:hover {
+                    background-color: white;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        &__list {
+            display: none;
+        }
+
+        &__checkbox {
+            display: none;
+        }
+
+        &__checkbox:checked ~ &__list {
+            display: block;
+        }
+
+        &__list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+
+            &__item {
+                display: block;
+                margin: 2rem;
+                padding: 2rem;
+
+                &__link {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
 
                 &:hover {
                     background-color: white;

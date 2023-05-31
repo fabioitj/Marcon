@@ -1,11 +1,11 @@
 import "./styles.scss";
-import {GppGood, ThumbUpAlt, Bookmark} from '@mui/icons-material';
+import { GppGood, ThumbUpAlt, Bookmark } from '@mui/icons-material';
 
-function NossoServicoCard({title, description, reverse, Icon}: {title: string, description: string, reverse: boolean, Icon: any}) {
+function NossoServicoCard({ title, description, reverse, Icon }: { title: string, description: string, reverse: boolean, Icon: any }) {
     return (
-        <div className={"nosso-servico__card " + (reverse ? "nosso-servico__card-reverse" : "")}>
+        <div className={"nosso-servico__box__card " + (reverse ? "nosso-servico__box__card-reverse" : "")}>
             {Icon}
-            <div className="nosso-servico__card__text">
+            <div className="nosso-servico__box__card__text">
                 <h2>{title}</h2>
                 <p>{description}</p>
             </div>
@@ -18,25 +18,27 @@ function NossoServico() {
         {
             title: 'Segurança',
             description: 'Provemos toda segurança necessária para nossos serviços, utilizando equipamentos e ferramentas apropriados para o trabalho.',
-            Icon: <GppGood/>
+            Icon: <GppGood />
         },
         {
             title: 'Qualidade',
             description: 'Entregamos sempre o serviço que um cliente nosso pode receber.',
-            Icon: <ThumbUpAlt/>
+            Icon: <ThumbUpAlt />
         },
         {
             title: 'Feedback',
             description: 'Somos os preferidos da região, sendo os melhores avaliados na Google, não vemos a hora de atender você!',
-            Icon: <Bookmark/>
+            Icon: <Bookmark />
         },
     ]
 
     return (
         <section className="nosso-servico" id="nosso-servico">
-            {
-                cards && cards.map(({title, description, Icon}, index) => <NossoServicoCard title={title} description={description} Icon={Icon} reverse={index%2==0} key={index}/>)
-            }
+            <div className="nosso-servico__box">
+                {
+                    cards && cards.map(({ title, description, Icon }, index) => <NossoServicoCard title={title} description={description} Icon={Icon} reverse={index % 2 == 0} key={index} />)
+                }
+            </div>
         </section>
     )
 }

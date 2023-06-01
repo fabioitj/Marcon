@@ -39,6 +39,7 @@ function NossoServico() {
                     cards && cards.map(({ title, description, Icon }, index) => <NossoServicoCard title={title} description={description} Icon={Icon} reverse={index % 2 == 0} key={index} />)
                 }
             </div>
+            <div></div>
         </section>
     )
 }

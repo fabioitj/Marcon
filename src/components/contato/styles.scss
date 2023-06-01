@@ -20,12 +20,11 @@ $blue: rgb(0, 153, 255);
         & h2 {
             text-align: left;
             width: 50%;
-            font-size: 2rem;
             padding-bottom: 1rem;
         }
 
         & form {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Inter, Helvetica, sans-serif;
             background-color: rgba(255, 255, 255, 0.5);
             padding: 1rem;
             width: 50%;
@@ -39,14 +38,15 @@ $blue: rgb(0, 153, 255);
 
             & input {
                 padding: 1rem 1rem;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: Inter, Helvetica, sans-serif;
                 background-color: rgba(255, 255, 255, 0.2);
                 border: 0;
                 border-bottom: 1px solid $blue;
                 color: black;
+                border-radius: 4px;
 
                 &::placeholder {
-                    font-family: Arial, Helvetica, sans-serif;
+                    font-family: Inter, Helvetica, sans-serif;
                 }
             }
 
@@ -54,14 +54,15 @@ $blue: rgb(0, 153, 255);
                 padding: 1rem;
                 height: 100px;
                 resize: vertical;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: Inter, Helvetica, sans-serif;
                 background-color: rgba(255, 255, 255, 0.2);
                 border: 0;
                 border-bottom: 1px solid $blue;
                 color: black;
+                border-radius: 4px;
 
                 &::placeholder {
-                    font-family: Arial, Helvetica, sans-serif;
+                    font-family: Inter, Helvetica, sans-serif;
                 }
             }
 
@@ -71,6 +72,8 @@ $blue: rgb(0, 153, 255);
                 font-weight: bold;
                 font-size: 1rem;
                 border: 0;
+                color: white;
+                border-radius: 4px;
             }
         }
 
@@ -78,12 +81,26 @@ $blue: rgb(0, 153, 255);
             margin-top: 1rem;
             width: 90%;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
+            gap: 4rem;
 
             & a {
                 color: white;
+                transition: color 0.2s;
                 & svg {
                     font-size: 2rem;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+
+                    &:nth-child(1) {
+                        color: blue;
+                    }
+
+                    &:nth-child(2) {
+                        color: rgb(0, 177, 0);
+                    }
                 }
             }
         }
@@ -100,18 +117,17 @@ $blue: rgb(0, 153, 255);
         & h2 {
             text-align: left;
             width: 50%;
-            font-size: 2rem;
-            padding-bottom: 1rem;;
+            padding-bottom: 1rem;
         }
 
         &__box {
             width: 50%;
-            height: 300px;
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.5);
             position: relative;
             color: black;
             text-align: center;
+            padding: 1rem 0;
 
             & img {
                 position: absolute;
@@ -163,14 +179,22 @@ $blue: rgb(0, 153, 255);
             }
 
             & a {
+                color: white;
+                transition: color 0.2s;
                 & svg {
                     font-size: 2rem;
                 }
-                
-                color: $blue;
 
-                &:nth-child(2) {
-                    color: green !important; 
+                &:hover {
+                    transform: scale(1.1);
+
+                    &:nth-child(1) {
+                        color: blue;
+                    }
+
+                    &:nth-child(2) {
+                        color: rgb(0, 177, 0);
+                    }
                 }
             }
         }
@@ -180,7 +204,6 @@ $blue: rgb(0, 153, 255);
 
             & h2 {
                 width: 90%;
-                font-size: 1.5rem;
             }
 
             &__box {

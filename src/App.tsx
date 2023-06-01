@@ -32,7 +32,9 @@ function App() {
   // }
 
   const showBackButtonFunction = () => {
-    const show = window.pageYOffset > 900;
+    let nosso_servico_y_position = document.getElementById("nosso-servico")?.offsetTop;
+    nosso_servico_y_position = (nosso_servico_y_position ? nosso_servico_y_position - 1 : 0);
+    const show = window.pageYOffset > nosso_servico_y_position;
     setShowBackButton(show);
   }
 

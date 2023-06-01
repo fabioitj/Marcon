@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { ArrowUpward } from '@mui/icons-material'
 
 function App() {
-  const [blurPixels, setBlurPixels] = useState(3);
+  const [blurPixels, setBlurPixels] = useState(5);
   const [showBackButton, setShowBackButton] = useState(false);
 
   const pixelsFunction = () => {

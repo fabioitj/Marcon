@@ -6,7 +6,7 @@ import NossoServico from './components/nosso_servico'
 import Contato from './components/contato'
 import { useEffect, useState,  } from "react";
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
-import { motion, useViewportScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function App() {
   const [blurPixels, setBlurPixels] = useState(5);
@@ -22,9 +22,6 @@ function App() {
       else
         setBlurPixels(pixels);
   }
-
-  const { scrollYProgress } = useViewportScroll()
-  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
 
   // const rightFunction = () => {
   //   if(window.pageYOffset > 150) {

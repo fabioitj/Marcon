@@ -4,12 +4,13 @@ import Footer from './components/footer'
 import Inicio from './components/inicio'
 import NossoServico from './components/nosso_servico'
 import Contato from './components/contato'
-import { useEffect, useState } from "react";
-import { ArrowUpward } from '@mui/icons-material'
+import { useEffect, useRef, useState } from "react";
+import { ArrowDownward, ArrowUpward } from '@mui/icons-material'
 
 function App() {
   const [blurPixels, setBlurPixels] = useState(5);
   const [showBackButton, setShowBackButton] = useState(false);
+  const [showForwardButton, setShowForwardButton] = useState(true);
 
   const pixelsFunction = () => {
     const pixels = Math.ceil(window.pageYOffset / 100);
@@ -38,18 +39,23 @@ function App() {
     setShowBackButton(show);
   }
 
+  const showForwardButtonFunction = () => {
+    const show = window.pageYOffset == 0;
+    setShowForwardButton(show);
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       pixelsFunction();
       // rightFunction();
       showBackButtonFunction();
+      showForwardButtonFunction();
       console.log(window.pageYOffset);
     });
   }, []);  
 
-
   return (
-    <section className='main'>
+    <section className='main' id='main'>
       <Navbar/>
 
       <Inicio/>
@@ -59,6 +65,7 @@ function App() {
 
       <Footer/>
       <a href='#inicio' className={(showBackButton ? "main__back-button-opened" : "main__back-button-closed")}><ArrowUpward/></a>
+      <a href='#nosso-servico' className={(showForwardButton ? "main__forward-button-opened" : "main__forward-button-closed")}><ArrowDownward/></a>
       <div className='main__blurred-image' style={{filter: `blur(${blurPixels}px)`}}></div>
     </section>
   )

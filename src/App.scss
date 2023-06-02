@@ -1,4 +1,5 @@
 $blue: rgb(0, 153, 255);
+$blue_translucent: rgba(0, 153, 255, 0.75);
 
 .main {
   position: relative;
@@ -21,7 +22,51 @@ $blue: rgb(0, 153, 255);
       color: white;
       position: fixed;
       margin: 0 auto;
-      bottom: 5rem;
+      bottom: 2rem;
+      right: 2rem;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $blue_translucent;
+      animation: showUp 0.1s linear;
+
+      & svg {
+        width:50%;
+        height:50%;
+      }
+    }
+
+    &-closed {
+      color: white;
+      position: fixed;
+      margin: 0 auto;
+      bottom: -5rem;
+      right: 2rem;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $blue_translucent;
+      animation: showDown 0.1s linear;
+
+      & svg {
+        width:50%;
+        height:50%;
+      }
+    }
+  }
+
+  &__forward-button {
+    &-opened {
+      color: white;
+      position: fixed;
+      margin: 0 auto;
+      bottom: 2rem;
       left: 50%;
       transform: translateX(-50%);
       width: 64px;
@@ -30,7 +75,7 @@ $blue: rgb(0, 153, 255);
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background-color: $blue;
+      background-color: $blue_translucent;
       animation: showUp 0.1s linear;
 
       & svg {
@@ -52,7 +97,7 @@ $blue: rgb(0, 153, 255);
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background-color: $blue;
+      background-color: $blue_translucent;
       animation: showDown 0.1s linear;
 
       & svg {
@@ -69,13 +114,13 @@ $blue: rgb(0, 153, 255);
   }
 
   to {
-    bottom: 5rem;
+    bottom: 2rem;
   }
 }
 
 @keyframes showDown {
   from {
-    bottom: 5rem;
+    bottom: 2rem;
   }
 
   to {

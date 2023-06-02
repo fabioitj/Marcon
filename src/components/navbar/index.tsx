@@ -1,12 +1,14 @@
 import "./styles.scss";
 import logo from "../../assets/logo.png";
 import { Menu } from "@mui/icons-material";
+import { motion } from "framer-motion";
+
 
 function Navbar() {
    
     return (
         <div className="navbar" > 
-            <img className="navbar__logo" src={logo}/>
+            <motion.img className="navbar__logo" src={logo} whileHover={{ scale: 1.15 }} transition={{ type: 'spring', stiffness: 300 }}/>
             <input className="navbar__checkbox" type="checkbox" id="navbar__checkbox"/>
             <label htmlFor="navbar__checkbox">
                 <Menu/>

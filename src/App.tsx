@@ -4,8 +4,9 @@ import Footer from './components/footer'
 import Inicio from './components/inicio'
 import NossoServico from './components/nosso_servico'
 import Contato from './components/contato'
-import { useEffect, useState } from "react";
-import { ArrowDownward, ArrowUpward } from '@mui/icons-material'
+import { useEffect, useState,  } from "react";
+import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
+import { motion, useViewportScroll, useTransform } from 'framer-motion'
 
 function App() {
   const [blurPixels, setBlurPixels] = useState(5);
@@ -21,6 +22,9 @@ function App() {
       else
         setBlurPixels(pixels);
   }
+
+  const { scrollYProgress } = useViewportScroll()
+  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
 
   // const rightFunction = () => {
   //   if(window.pageYOffset > 150) {
@@ -55,7 +59,7 @@ function App() {
   }, []);  
 
   return (
-    <section className='main' id='main'>
+    <motion.section className='main' id='main'>
       <Navbar/>
 
       <Inicio/>
@@ -64,10 +68,10 @@ function App() {
       <Contato/>
 
       <Footer/>
-      <a href='#inicio' className={(showBackButton ? "main__back-button-opened" : "main__back-button-closed")}><ArrowUpward/></a>
-      <a href='#nosso-servico' className={(showForwardButton ? "main__forward-button-opened" : "main__forward-button-closed")}><ArrowDownward/></a>
-      <div className='main__blurred-image' style={{filter: `blur(${blurPixels}px)`}}></div>
-    </section>
+      <motion.a href='#inicio' className="main__back-button" initial={{ right: '2rem', bottom: '2rem' }} animate={showBackButton ? { bottom: '2rem'} : { bottom: '-5rem'}} transition={{ type: "spring", stiffness: 300 }}><ArrowUpward/></motion.a>
+      <motion.a href='#nosso-servico' className="main__forward-button" initial={{ left: '50%', transform: 'translateX(-50%)', bottom: '2rem'}} animate={showForwardButton ? { bottom: '2rem'} : { bottom: '-5rem'}} transition={{ type: "spring", stiffness: 300 }}><ArrowDownward/></motion.a>
+      <motion.div className='main__blurred-image' style={{filter: `blur(${blurPixels}px)`}}></motion.div>
+    </motion.section>
   )
 }
 

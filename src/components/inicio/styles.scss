@@ -1,79 +1,110 @@
 $blue: rgb(0, 153, 255);
+$blue_translucent: rgba(0, 153, 255, 0.5);
 
 .inicio {
-    height: 100vh;
-    width: 100%;
     display: flex;
-    background: transparent;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 2rem;
 
-    &__apresentation {
+    &__left {
+        height: 100vh;
         width: 50%;
-        padding: 2rem;
-        color: white;
-        font-weight: bold;
-        font-size: 2.5rem;
-    }
-
-    &__buttons {
-        padding: 2rem;
-        width: 100%;
         display: flex;
-        align-items: center;
+        background: transparent;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 2rem;
 
-        & a {
-            padding: 1rem;
-            font-size: 1rem;
-            font-family: Inter, Helvetica, sans-serif;
-            font-weight: bold;
-            margin-right: 1rem;
-            border: 0;
-            background-color: $blue;
-            transition: 0.1s all;
-            cursor: pointer;
-            text-decoration: none;
+        &__apresentation {
+            width: 100%;
+            padding: 2rem;
             color: white;
-            border-radius: 24px;
-            -webkit-box-shadow: 0px 5px 52px -12px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 5px 52px -12px rgba(0,0,0,0.75);
-            box-shadow: 0px 5px 52px -12px rgba(0,0,0,0.75);
+            font-weight: bold;
+            font-size: 2.5rem;
 
-            &:hover {
-                background-color: white;
-                color: $blue;
+            & span {
+                padding: 0.5rem;
+                background-color: $blue_translucent;
             }
-        }      
-        
-        &__zap {
-            background-color: green !important;
+        }
+
+        &__buttons {
+            padding: 2rem;
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
 
-            &:hover {
-                color: green !important;
-                background-color: white !important;
+            & a {
+                padding: 1rem;
+                font-size: 1rem;
+                font-family: Inter, Helvetica, sans-serif;
+                font-weight: bold;
+                margin-right: 1rem;
+                border: 0;
+                background-color: $blue;
+                transition: 0.1s all;
+                cursor: pointer;
+                text-decoration: none;
+                color: white;
+                border-radius: 24px;
+                -webkit-box-shadow: 0px 5px 52px -12px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 0px 5px 52px -12px rgba(0, 0, 0, 0.75);
+                box-shadow: 0px 5px 52px -12px rgba(0, 0, 0, 0.75);
+
+                &:hover {
+                    background-color: white;
+                    color: $blue;
+                }
             }
+
+            &__zap {
+                background-color: green !important;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                &:hover {
+                    color: green !important;
+                    background-color: white !important;
+                }
+            }
+        }
+    }
+
+    &__right {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__image {
+            width: 50%;
         }
     }
 }
 
 @media screen and (max-width: 768px) {
     .inicio {
-        padding: 0 !important;
+        flex-direction: column;
 
-        &__apresentation {
-            font-size: 1.8rem;
+        &__left {
             width: 100%;
-        }
+            
+            padding: 0 !important;
 
-        &__buttons {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
+            &__apresentation {
+                font-size: 1.8rem;
+                width: 100%;
+
+                & span {
+                    line-height: 4rem;
+                }
+            }
+
+            &__buttons {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
         }
     }
 }

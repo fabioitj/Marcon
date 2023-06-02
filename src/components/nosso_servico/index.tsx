@@ -1,15 +1,16 @@
 import "./styles.scss";
 import { GppGood, ThumbUpAlt, Bookmark } from '@mui/icons-material';
+import { motion } from "framer-motion";
 
-function NossoServicoCard({ title, description, reverse, Icon }: { title: string, description: string, reverse: boolean, Icon: any }) {
+function NossoServicoCard({ title, description, Icon }: { title: string, description: string, reverse: boolean, Icon: any }) {
     return (
-        <div className={"nosso-servico__box__card " + (reverse ? "nosso-servico__box__card-reverse" : "")}>
+        <motion.div className="nosso-servico__box__card" initial={{ opacity: 0, marginLeft: -500 }} whileInView={{ opacity: 1, marginLeft: 0 }} transition={{ duration: 0.5 }}>
             {Icon}
             <div className="nosso-servico__box__card__text">
                 <h2>{title}</h2>
                 <p>{description}</p>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -1,7 +1,6 @@
 import "./styles.scss";
 import logo from "../../assets/logo.png";
 import { Menu } from "@mui/icons-material";
-import React, { useEffect } from "react";
 
 function Navbar() {
    

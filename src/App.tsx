@@ -4,7 +4,7 @@ import Footer from './components/footer'
 import Inicio from './components/inicio'
 import NossoServico from './components/nosso_servico'
 import Contato from './components/contato'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material'
 
 function App() {

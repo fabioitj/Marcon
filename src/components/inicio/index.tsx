@@ -1,7 +1,6 @@
 import "./styles.scss";
 import { WhatsApp } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import coolGuy from "../../assets/cool-guy.png";
 
 // function Inicio({right}) {
 function Inicio() {
